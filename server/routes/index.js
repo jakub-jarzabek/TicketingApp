@@ -1,3 +1,3 @@
-exports.index = function (req,res){
-    res.render('index')
+exports.loginPage = function (req,res){
+    res.render('LoginPage')
 }
