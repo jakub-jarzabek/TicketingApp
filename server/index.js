@@ -12,10 +12,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.get('/', require('./routes').index);
 
-app.get('/', (req,res)=>{
-    res.send("<h1> JMS </h1>")
-})
+// app.get('/', (req,res)=>{
+//     res.send("<h1> JMS </h1>")
+// })
 
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)
