@@ -33,6 +33,7 @@ function LoginPage(props) {
            </button>
         </form>
       </body>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script src='/scripts/LoginPage.js'/>
     </html>
   )
