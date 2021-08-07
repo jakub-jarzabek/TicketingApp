@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 const app = express()
 const bodyParser = require('body-parser')
 const port = 3000
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(authRoutes)
 
-const dbURI = 'mongodb+srv://todoApp:jms123@clustertodo.i83dl.mongodb.net/ticketing-app'
+const dbURI = process.env.DB_CONNECTION
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true})
     .then((result) => app.listen(3000))
     .catch((err) => console.log(err))
