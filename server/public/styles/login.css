@@ -1,3 +1,68 @@
 body{
-    background-color: red;
+    background-image: url('/assets/images/xd.jpg');
+    position:relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.__LoginForm{
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    flex-grow:unset;
+    background-color: grey;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    border: solid black 2px;
+    border-radius: 25px;
+}
+.__LoginHeader{
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-top: 0;
+    overflow:hidden;
+    padding: 30px;
+    background-color: aquamarine;
+    text-transform: uppercase;
+    font-size:30px;
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 25px;
+
+}
+
+.__FormLabel{
+    margin-left: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+
+.__FormInput{
+    margin:0px 10px 5px;
+    font-size: 18px;
+}
+
+.__SubmitBtn{
+    align-self: center;
+    width: 50%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.__SubmitBtn:hover{
+    color:white;
+    background-color: black;
+    border: 2px solid white;
 }
