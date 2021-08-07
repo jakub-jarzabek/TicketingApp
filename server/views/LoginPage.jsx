@@ -1,24 +1,34 @@
 var React = require('react');
- 
+import {useState} from 'react';
+
 function LoginPage(props) {
+  const [login, setLogin] = useState();
+  const [passwd, setPasswd] = useState();
+  const handleOnChange = (e)=>{
+    switch (e.target.id){
+      case 'loginInput':
+        setLogin(e.target.value)
+        break;
+      case 'passwordInput':
+        setPasswd(e.target.value)
+        break;
+    }
+  }
+
   return (
     <html>
       <head>
-        <title>{props.title}</title>
+        <title>Login Page</title>
         <link rel="stylesheet" type="text/css" href="/styles/login.css" />
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-          // This is making use of ES6 template strings, which allow for
-          // multiline strings. We specified "{jsx: {harmony: true}}" when
-          // creating the engine in app.js to get this feature.
-          console.log("hello world");
-        `,
-          }}
-        /> */}
       </head>
+      
       <body>
-        <p>css test</p>
+        <form action="submit">
+          <label htmlFor="loginInput">Login:</label>
+          <input type="text" id="loginInput" value={login}/>
+          <label htmlFor="passwordInput">Password:</label>
+          <input type="password" id="passwordInput" value={passwd}/>
+        </form>
       </body>
     </html>
   )
