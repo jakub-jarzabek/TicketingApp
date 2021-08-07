@@ -1,5 +1,7 @@
 body{
     background-image: url('/assets/images/xd.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     position:relative;
     width: 100vw;
     height: 100vh;

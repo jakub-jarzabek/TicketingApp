@@ -58,6 +58,7 @@ function LoginPage(props) {
            </button>
         </form>
       </body>
+      <script src='/scripts/LoginPage.js'/>
     </html>
   )
 }
