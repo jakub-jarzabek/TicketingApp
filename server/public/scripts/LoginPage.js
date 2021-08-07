@@ -1,10 +1,20 @@
-const { default: axios } = require("axios");
+
 
 const form = document.querySelector('form');
 
-form.addEventListener('submit', (e)=>{
+form.addEventListener('submit', async (e)=>{
     e.preventDefault();
      const email = e.target[0].value
      const password = e.target[1].value
-     axios.post('http://localhost:3000',{email,password})
+     try{
+         const res = await fetch('/',{
+            method:'POST',
+            body: JSON.stringify({email, password}),
+            headers:{'Content-Type': 'application/json'}
+         });
+         const data = await res.json();
+         console.log(data)
+         }catch(err){
+         console.log(err)
+     }
 })

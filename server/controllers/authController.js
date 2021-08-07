@@ -1,4 +1,4 @@
-
+const User = require('../models/User')
 
 //auth
 module.exports.panel_get = (req,res) => {
@@ -17,6 +17,14 @@ module.exports.login_get = (req, res) => {
 module.exports.login_post = async (req, res) => {
     const { email, password } = req.body
 
-    console.log(email, password)
-    res.send('user login')
+    try{
+        const user = await User.login(email, password)
+        res.status(200).json({user: user._id})
+        location.replace('http://localhost:3000/panel')
+
+    }
+    catch{
+        res.status(400).json({})
+    }
+
 }
