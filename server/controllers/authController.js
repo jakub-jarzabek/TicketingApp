@@ -1,6 +1,15 @@
 
 
 //auth
+module.exports.panel_get = (req,res) => {
+    res.render('Panel')
+}
+
+module.exports.panel_post = (req,res) => {
+    res.send('panel post')
+}
+
+
 module.exports.login_get = (req, res) => {
     res.render('LoginPage')
 }
