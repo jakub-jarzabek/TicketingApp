@@ -14,8 +14,8 @@ const router = Router();
 
 const authController = require('../controllers/authController')
 
-router.get('/Panel', authController.panel_get)
-router.post('/Panel', authController.panel_post)
+router.get('/panel', authController.panel_get)
+router.post('/panel', authController.panel_post)
 router.get('/', authController.login_get)
 router.post('/', authController.login_post)
 
