@@ -1,4 +1,5 @@
 var React = require('react');
+import e from 'express';
 import {useState} from 'react';
 
 function LoginPage(props) {
@@ -17,8 +18,8 @@ function LoginPage(props) {
   }
 
   const handleOnSubmit = (e) => {
-    e.preventDefault();
-    console.log(`Login: ${login} Password: ${passwd}`)
+   e.preventDefault();
+   console.log(login, passwd)
   }
 
   return (
@@ -27,16 +28,16 @@ function LoginPage(props) {
         <title>Login Page</title>
         <link rel="stylesheet" type="text/css" href="/styles/login.css" />
       </head>
-      
       <body>
-        <form action="submit" onSubmit={handleOnSubmit} className='__LoginForm'>
+        <form  className='__LoginForm' onSubmit={handleOnSubmit}>
           <h1 className='__LoginHeader'>Login</h1>
           <label htmlFor="loginInput" className='__FormLabel' >
-            Login:
+            Email:
           </label>
           <input
           type="text"
           id="loginInput"
+          name="email"
           value={login}
           onChange={handleOnChange}
           className='__FormInput'
@@ -47,11 +48,12 @@ function LoginPage(props) {
           <input
            type="password"
            id="passwordInput"
+           name="password"
            value={passwd}
            onChange={handleOnChange}
            className='__FormInput'
            />
-           <button type='Submit' className='__SubmitBtn'>
+           <button className='__SubmitBtn' type='submit'>
              Login
            </button>
         </form>
