@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const port = 3000
 const authRoutes = require('./routes/index.js')
 const mongoose = require('mongoose')
+const cookieParser = require('cookie-parser')
 
 
 app.set('views', __dirname + '/views');
@@ -14,6 +15,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(express.json())
+app.use(cookieParser())
 
 
 app.use(bodyParser.urlencoded({

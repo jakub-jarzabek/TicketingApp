@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const {requireAuth} = require('../middleware/authMiddleware')
 const router = Router();
 
 // exports.loginPage = function (req,res){
@@ -14,7 +15,7 @@ const router = Router();
 
 const authController = require('../controllers/authController')
 
-router.get('/panel', authController.panel_get)
+router.get('/panel', requireAuth, authController.panel_get)
 router.post('/panel', authController.panel_post)
 router.get('/', authController.login_get)
 router.post('/', authController.login_post)

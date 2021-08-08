@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6
     },
+    isAdmin: {
+        type: Boolean,
+        required: true
+    }
 })
 
 userSchema.statics.login = async function(email, password){
