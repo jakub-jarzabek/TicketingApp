@@ -1,9 +1,9 @@
 var React = require('react');
-var Panel = require('./Panel')
+var NewTask = require('./NewTask')
 function DefaultLayout(props) {
 
     return(
-     <Panel/>
+     <NewTask/>
     )
 }
 
