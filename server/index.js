@@ -28,9 +28,3 @@ const dbURI = process.env.DB_CONNECTION
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true})
     .then((result) => app.listen(3000))
     .catch((err) => console.log(err))
-
-
-
-
-
-

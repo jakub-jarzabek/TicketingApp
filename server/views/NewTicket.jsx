@@ -1,6 +1,6 @@
 var React = require('react')
 
-function NewTask(props){
+function NewTicket(props){
     return(
     <html>
     <head>
@@ -17,7 +17,7 @@ function NewTask(props){
                 <label className='__FormLabel' htmlFor="IssuedBy">Issued by:</label>
                 <input className='__FormInput' type="text" id='IssuedBy' value='TestUser' readOnly />
                 <label className='__FormLabel' htmlFor="Category">Category:</label>
-                <select className='__FormInput' id="Category">
+                <select className='__FormInput' name='category' id="Category">
                     <option value="Network">Network</option>
                     <option value="Hardware">Hardware</option>
                     <option value="Software">Software</option>
@@ -31,8 +31,9 @@ function NewTask(props){
            </form>
        </div>
     </body>
+    <script src='/scripts/NewTicket.js'/>
   </html>
 )
 }
 
-module.exports = NewTask;
+module.exports = NewTicket;

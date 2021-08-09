@@ -1,9 +1,11 @@
 var React = require('react');
-var NewTask = require('./NewTask')
+var NewTicket = require('./NewTicket')
+var ViewTickets = require('./ViewTickets')
 function DefaultLayout(props) {
 
     return(
-     <NewTask/>
+    <NewTicket/>
+        // <ViewTickets/>
     )
 }
 
