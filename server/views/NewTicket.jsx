@@ -1,5 +1,4 @@
 var React = require('react')
-
 function NewTicket(props){
     return(
     <html>
@@ -15,7 +14,7 @@ function NewTicket(props){
                 <label className='__FormLabel' htmlFor="NewTaskTitle">Title:</label>
                 <input className='__FormInput' type="text" id='NewTaskTitle'/>
                 <label className='__FormLabel' htmlFor="IssuedBy">Issued by:</label>
-                <input className='__FormInput' type="text" id='IssuedBy' value='TestUser' readOnly />
+                <input className='__FormInput' type="text" id='IssuedBy' readOnly/>
                 <label className='__FormLabel' htmlFor="Category">Category:</label>
                 <select className='__FormInput' name='category' id="Category">
                     <option value="Network">Network</option>
