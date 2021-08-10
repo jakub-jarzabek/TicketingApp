@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const Ticket = require('../models/Ticket')
 const jwt = require('jsonwebtoken')
 
 
@@ -15,8 +16,17 @@ module.exports.panel_get = (req,res) => {
     res.render('DefaultLayout')
 }
 
-module.exports.panel_post = (req,res) => {
-    res.send('panel post')
+module.exports.panel_post = async (req,res) => {
+    // res.send('panel post')
+    const {title, issuedBy, category, description, date} = req.body
+
+    try{
+        const ticket = await Ticket.create({title, issuedBy, category, description, date})
+        res.status(201).json(ticket)
+    }
+    catch(err){
+        res.status(400).json({})
+    }
 }
 
 

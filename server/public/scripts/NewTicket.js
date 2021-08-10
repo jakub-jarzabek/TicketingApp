@@ -13,7 +13,7 @@ form.addEventListener('submit', async (e)=>{
      const email = e.target[0].value
      const password = e.target[1].value
      try{
-         const res = await fetch('/portal',{
+         const res = await fetch('/panel',{
             method:'POST',
             body: JSON.stringify(data),
             headers:{'Content-Type': 'application/json'}
