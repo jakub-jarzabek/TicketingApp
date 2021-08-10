@@ -13,6 +13,7 @@ form.addEventListener('submit', async (e)=>{
             headers:{'Content-Type': 'application/json'}
          });
          const data = await res.json();
+         console.log(data)
          if(data.user){
              window.location.replace('http://localhost:3000/panel')
          }
