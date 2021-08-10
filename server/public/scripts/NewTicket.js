@@ -1,3 +1,23 @@
+function getCookie(name) {
+    var cookieArr = document.cookie.split(";");
+    for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+        if(name == cookiePair[0].trim()) {
+            return decodeURIComponent(cookiePair[1]);
+        }
+    }
+    return null;
+}
+
+window.addEventListener('load', (e) => {
+    setTimeout(document.querySelector('#IssuedBy').value=getCookie('currentUser'),100)
+  });
+
+
+
+
+
+//Form handling
 const form = document.querySelector('form');
 
 form.addEventListener('submit', async (e)=>{
