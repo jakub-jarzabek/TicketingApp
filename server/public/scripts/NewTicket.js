@@ -11,7 +11,7 @@ form.addEventListener('submit', async (e)=>{
         "isResolved": false
     }
      try{
-         const res = await fetch('/panel',{
+         const res = await fetch('/newTicket',{
             method:'POST',
             body: JSON.stringify(postData),
             headers:{'Content-Type': 'application/json'}

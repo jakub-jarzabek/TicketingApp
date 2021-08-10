@@ -12,11 +12,12 @@ const createToken = (id) => {
 
 
 //auth
-module.exports.panel_get = (req,res) => {
+
+module.exports.newTicket_get = (req,res) => {
     res.render('DefaultLayout')
 }
 
-module.exports.panel_post = async (req,res) => {
+module.exports.newTicket_post = async (req,res) => {
     // res.send('panel post')
     const {title, issuedBy, category, description, date, isResolved} = req.body
 
@@ -27,6 +28,16 @@ module.exports.panel_post = async (req,res) => {
     catch(err){
         res.status(400).json({})
     }
+}
+
+
+module.exports.panel_get = (req,res) => {
+    res.render('Panel')
+}
+
+module.exports.panel_post = async (req,res) => {
+    // res.send('panel post')
+    console.log('panel post')
 }
 
 
