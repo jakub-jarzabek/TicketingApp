@@ -8,7 +8,8 @@ form.addEventListener('submit', async (e)=>{
         "issuedBy":e.target[1].value,
         "category":e.target[2].value,
         "description":e.target[3].value,
-        "date":e.target[4].value
+        "date":e.target[4].value,
+        "isResolved": false
     }
      const email = e.target[0].value
      const password = e.target[1].value

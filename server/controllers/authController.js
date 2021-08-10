@@ -18,10 +18,10 @@ module.exports.panel_get = (req,res) => {
 
 module.exports.panel_post = async (req,res) => {
     // res.send('panel post')
-    const {title, issuedBy, category, description, date} = req.body
+    const {title, issuedBy, category, description, date, isResolved} = req.body
 
     try{
-        const ticket = await Ticket.create({title, issuedBy, category, description, date})
+        const ticket = await Ticket.create({title, issuedBy, category, description, date, isResolved})
         res.status(201).json(ticket)
     }
     catch(err){
