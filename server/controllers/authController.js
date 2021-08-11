@@ -12,9 +12,25 @@ const createToken = (id) => {
 
 
 //auth
+module.exports.submittedTickets_get = async (req,res) => {
+    res.render('ViewTickets')
+    const email = "appkatest69@gmail.com"
+    const tickets = await Ticket.findTickets(email)
+    console.log(tickets)
 
-module.exports.newTicket_get = (req,res) => {
+}
+
+module.exports.submittedTickets_post =  (req,res) => {
+    // res.send('panel post')
+    console.log('submittedTickets post')
+}
+
+
+
+module.exports.newTicket_get =  (req,res) => {
+
     res.render('DefaultLayout')
+
 }
 
 module.exports.newTicket_post = async (req,res) => {

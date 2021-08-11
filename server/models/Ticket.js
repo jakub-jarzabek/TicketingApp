@@ -41,6 +41,16 @@ const ticketSchema = new mongoose.Schema({
     }
 })
 
+
+ticketSchema.statics.findTickets = async function(email){
+    const tickets = await this.find({"issuedBy": email})
+    if(tickets)
+    {
+        return tickets
+    }
+    console.log("error")
+}
+
 const Ticket = mongoose.model('ticket', ticketSchema)
 
 

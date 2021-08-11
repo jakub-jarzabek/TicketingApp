@@ -15,6 +15,8 @@ const router = Router();
 
 const authController = require('../controllers/authController')
 
+router.get('/submitted', requireAuth, authController.submittedTickets_get)
+router.post('/submitted', authController.submittedTickets_post)
 router.get('/newTicket', requireAuth, authController.newTicket_get)
 router.post('/newTicket', authController.newTicket_post)
 router.get('/panel', requireAuth, authController.panel_get)
