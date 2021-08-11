@@ -12,11 +12,30 @@ const createToken = (id) => {
 
 
 //auth
+
+module.exports.ticketsByEmail_get = async  (req, res) =>{
+    const token =  req.cookies.jwt
+    console.log(token)
+    try{
+        const email = await User.findByToken(`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGVkZTJmNTc3NzM1MmI1M2IzZjdhYSIsImlhdCI6MTYyODY5NzUxNiwiZXhwIjoxNjI4OTU2NzE2fQ.B_j65mYBID7B3LuC9px0mRuVqNRZ7o8XB8jD0ry-4L0`)
+        const tickets = await Ticket.findTickets(email)
+            .then(tickets => res.json(tickets))
+    }
+    catch(err)
+    {
+        console.log(err)
+    }
+
+
+
+
+
+}
+
 module.exports.submittedTickets_get = async (req,res) => {
     res.render('ViewTickets')
-    const email = "appkatest69@gmail.com"
-    const tickets = await Ticket.findTickets(email)
-    console.log(tickets)
+
+
 
 }
 

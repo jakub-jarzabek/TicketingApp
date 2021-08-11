@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const jwt = require('jsonwebtoken')
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -17,6 +18,36 @@ const userSchema = new mongoose.Schema({
         required: true
     }
 })
+
+
+
+
+userSchema.statics.findByToken = async function(token){
+
+    console.log(token)
+    let emailxd
+    if(token) {
+        const jms = await jwt.verify(token, 'jms', async (err, decodedToken) => {
+                if (err) {
+                    console.log(err.message)
+                } else {
+                    console.log(decodedToken.id)
+                    const user = await this.findOne({"_id": decodedToken.id})
+
+                    // if(user){
+                    console.log(user.email)
+                    return user.email//}
+
+                    //console.log("error")
+                }
+
+
+            }
+        )
+        return jms
+    }
+
+}
 
 userSchema.statics.login = async function(email, password){
     const user = await this.findOne({email})

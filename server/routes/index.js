@@ -14,11 +14,11 @@ const router = Router();
 
 
 const authController = require('../controllers/authController')
-
+router.get('/api/tickets', requireAuth, authController.ticketsByEmail_get)
 router.get('/submitted', requireAuth, authController.submittedTickets_get)
 router.post('/submitted', authController.submittedTickets_post)
 router.get('/newTicket', requireAuth, authController.newTicket_get)
-router.post('/newTicket', authController.newTicket_post)
+router.post('/api/tickets', authController.newTicket_post)
 router.get('/panel', requireAuth, authController.panel_get)
 router.post('/panel', authController.panel_post)
 router.get('/', authController.login_get)
