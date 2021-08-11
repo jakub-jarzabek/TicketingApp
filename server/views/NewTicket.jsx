@@ -8,6 +8,10 @@ function NewTicket(props){
       <link rel="stylesheet" type="text/css" href="/styles/newTask.css" />
     </head>
     <body>
+    <a href="/panel" className='__BackBtn'>
+    <i className="arrow left"></i>
+            Back
+            </a>
        <div className='__FormWrapper'>
            <h1 className='__NewTaskHeader'>New Task</h1>
            <form action="" className='__NewTaskForm'>

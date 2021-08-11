@@ -46,20 +46,23 @@ function ViewTasks(props) {
         )
     })
     return( 
-        <div>
-             <html>
-        <head>
-          <title>Login Page</title>
-          <script src="https://kit.fontawesome.com/af38254b2c.js" crossOrigin="anonymous"></script>
-          <link rel="stylesheet" type="text/css" href="/styles/ticket.css" />
-        </head>
-        <body>
-            <div className='__ViewTicketsWrapper'>
-                {Items}
-            </div>
-        </body>
-      </html>
-        </div>
+        <html>
+            <head>
+                <title>View Tickets</title>
+                <script src="https://kit.fontawesome.com/af38254b2c.js" crossOrigin="anonymous"></script>
+                <link rel="stylesheet" type="text/css" href="/styles/ticket.css" />
+                <link rel="stylesheet" type="text/css" href="/styles/newTask.css" />
+            </head>
+            <body>
+            <a href="/panel" className='__BackBtn'>
+                <i className="arrow left"></i>
+                Back
+            </a>
+                <div className='__ViewTicketsWrapper'>
+                    {Items}
+                </div>
+            </body>
+        </html>
     )
 }
 

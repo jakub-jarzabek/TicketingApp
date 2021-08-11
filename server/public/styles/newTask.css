@@ -39,3 +39,34 @@
 resize:none;
 margin: 0 10px;
 }
+
+.__BackBtn{
+    text-decoration: none;
+    color:black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position:absolute;
+    top:5%;
+    left:5%;
+    font-size:20px
+    }
+.arrow {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 5px;
+    }
+.left {
+transform: rotate(135deg);
+-webkit-transform: rotate(135deg);
+}
+.__BackBtn:hover{
+    animation-name: backBtnMove;
+    animation-duration: 1s;
+}
+
+@keyframes backBtnMove {
+    0% {left:5%}
+    50%{left:2%}
+    100%{left:5%}
+}
