@@ -14,9 +14,6 @@ window.addEventListener('load', (e) => {
   });
 
 
-
-
-
 //Form handling
 const form = document.querySelector('form');
 
@@ -31,7 +28,7 @@ form.addEventListener('submit', async (e)=>{
         "isResolved": false
     }
      try{
-         const res = await fetch('/newTicket',{
+         const res = await fetch('/api/tickets',{
             method:'POST',
             body: JSON.stringify(postData),
             headers:{'Content-Type': 'application/json'}

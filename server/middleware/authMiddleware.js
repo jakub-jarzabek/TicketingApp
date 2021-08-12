@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken')
 
 const requireAuth = (req, res, next) => {
-    const token = req.cookies.jwt
+    // const token = req.cookies.jwt
+    const token = req.headers["x-access-token"] || req.cookies.jwt
 
     if(token){
         jwt.verify(token, 'jms', (err, decodedToken) => {
@@ -10,6 +11,7 @@ const requireAuth = (req, res, next) => {
                 res.redirect('/')
             } else {
                 console.log(decodedToken)
+                req.decodedToken=decodedToken
 
                 next()
             }

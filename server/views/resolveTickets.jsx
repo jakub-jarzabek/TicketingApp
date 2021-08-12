@@ -1,7 +1,7 @@
 var React = require('react')
 var Ticket = require('ticket')
 function resolveTickets(props){
-
+    const tickets= props.tickets
     const Items = tickets.map(ticket=>{
         return(
         <Ticket 

@@ -25,7 +25,6 @@ const userSchema = new mongoose.Schema({
 userSchema.statics.findByToken = async function(token){
 
     console.log(token)
-    let emailxd
     if(token) {
         const jms = await jwt.verify(token, 'jms', async (err, decodedToken) => {
                 if (err) {
@@ -35,7 +34,7 @@ userSchema.statics.findByToken = async function(token){
                     const user = await this.findOne({"_id": decodedToken.id})
 
                     // if(user){
-                    console.log(user.email)
+                    console.log('user email' + user.email)
                     return user.email//}
 
                     //console.log("error")

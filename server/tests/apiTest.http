@@ -1,0 +1,2 @@
+GET http://localhost:3000/api/tickets
+x-access-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGVkZTJmNTc3NzM1MmI1M2IzZjdhYSIsImlhdCI6MTYyODcxMjc3NywiZXhwIjoxNjI4OTcxOTc3fQ.ij9cVxng4Zqhr1ii6wlzCRxJIXMYa5ZhtAqRjMOIoQY

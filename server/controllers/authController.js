@@ -1,7 +1,7 @@
 const User = require('../models/User')
 const Ticket = require('../models/Ticket')
 const jwt = require('jsonwebtoken')
-
+const fetch = require('node-fetch')
 
 const maxAge = 3 * 24 * 60 * 60
 const createToken = (id) => {
@@ -14,12 +14,14 @@ const createToken = (id) => {
 //auth
 
 module.exports.ticketsByEmail_get = async  (req, res) =>{
-    const token =  req.cookies.jwt
-    console.log(token)
+    const token = await req.cookies.jwt ||req.headers["x-access-token"]
+    console.log('token:' + token)
     try{
-        const email = await User.findByToken(`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMGVkZTJmNTc3NzM1MmI1M2IzZjdhYSIsImlhdCI6MTYyODY5NzUxNiwiZXhwIjoxNjI4OTU2NzE2fQ.B_j65mYBID7B3LuC9px0mRuVqNRZ7o8XB8jD0ry-4L0`)
-        const tickets = await Ticket.findTickets(email)
-            .then(tickets => res.json(tickets))
+         const email = await User.findByToken(token)
+         console.log('email:' + email)
+       const tickets = await Ticket.findTickets(email)
+       console.log('tickets:' + tickets)
+            res.send(tickets)
     }
     catch(err)
     {
@@ -31,13 +33,24 @@ module.exports.ticketsByEmail_get = async  (req, res) =>{
 
 
 }
-
+  
 module.exports.submittedTickets_get = async (req,res) => {
-    res.render('ViewTickets')
+    const token =  req.cookies.jwt
+   const tickets = await fetch('http://localhost:3000/api/tickets', {
+        method: 'get',
+        headers: { 'x-access-token': token },
+    })
+    .then(response => response.json())
+    .then(data => Array.from(data));
+     await res.render('ViewTickets',{tickets:tickets})
+    
+    }
+    
+  
 
 
 
-}
+
 
 module.exports.submittedTickets_post =  (req,res) => {
     // res.send('panel post')

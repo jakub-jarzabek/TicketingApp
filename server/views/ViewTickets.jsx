@@ -3,36 +3,37 @@ var Ticket = require('./Ticket')
 
 function ViewTasks(props) {
 
-    const tickets=[
-        {
-            "id":"2",
-            "title":"test1",
-            "issuedBy":"testUSer1",
-            "category":"Network",
-            "description":"Lorem Ipsum",
-            "date":"8/8/2021, 7:46:10 PM",
-            "isResolved":false,
-            "resolvedDate":"",
-            "resolvedBy":"",
-            "comment":""
-        },
-        {
-            "id":"2",
-            "title":"test2",
-            "issuedBy":"testUSer2",
-            "category":"Network",
-            "description":"Lorem Ipsum",
-            "date":"8/8/2021, 7:46:10 PM",
-            "isResolved":true,
-            "resolvedDate":"8/8/2021, 7:46:10 PM",
-            "resolvedBy":"testAdminUser",
-            "comment":"Resolved"
-            }
-    ]
+    const tickets=props.tickets
+    // [
+    //     {
+    //         "id":"2",
+    //         "title":"test1",
+    //         "issuedBy":"testUSer1",
+    //         "category":"Network",
+    //         "description":"Lorem Ipsum",
+    //         "date":"8/8/2021, 7:46:10 PM",
+    //         "isResolved":false,
+    //         "resolvedDate":"",
+    //         "resolvedBy":"",
+    //         "comment":""
+    //     },
+    //     {
+    //         "id":"2",
+    //         "title":"test2",
+    //         "issuedBy":"testUSer2",
+    //         "category":"Network",
+    //         "description":"Lorem Ipsum",
+    //         "date":"8/8/2021, 7:46:10 PM",
+    //         "isResolved":true,
+    //         "resolvedDate":"8/8/2021, 7:46:10 PM",
+    //         "resolvedBy":"testAdminUser",
+    //         "comment":"Resolved"
+    //         }
+    // ]
     const Items = tickets.map(ticket=>{
         return(
         <Ticket 
-            key = {ticket.id}
+            key = {ticket._id}
             title = {ticket.title}
             issuedBy = {ticket.issuedBy}
             category = {ticket.category}
