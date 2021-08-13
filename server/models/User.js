@@ -33,9 +33,9 @@ userSchema.statics.findByToken = async function(token){
                     console.log(decodedToken.id)
                     const user = await this.findOne({"_id": decodedToken.id})
 
-                    // if(user){
+                    if(user){
                     console.log('user email' + user.email)
-                    return user.email//}
+                    return user}
 
                     //console.log("error")
                 }

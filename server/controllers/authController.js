@@ -17,9 +17,9 @@ module.exports.ticketsByEmail_get = async  (req, res) =>{
     const token = await req.cookies.jwt ||req.headers["x-access-token"]
     console.log('token:' + token)
     try{
-         const email = await User.findByToken(token)
-         console.log('email:' + email)
-       const tickets = await Ticket.findTickets(email)
+         const user = await User.findByToken(token)
+         console.log('email:' + user.email)
+       const tickets = await Ticket.findTickets(user.email)
        console.log('tickets:' + tickets)
             res.send(tickets)
     }
@@ -46,8 +46,31 @@ module.exports.submittedTickets_get = async (req,res) => {
     
     }
     
-  
-
+    module.exports.resolveTickets_get = async (req,res) => {
+        const token =  req.cookies.jwt
+        const user = await User.findByToken(token)
+        if(user.isAdmin){
+            const tickets = await fetch('http://localhost:3000/api/tickets', {
+            method: 'get',
+            headers: { 'x-access-token': token },
+        })
+        .then(response => response.json())
+        .then(data => Array.from(data));
+        const ticketsToResolve= tickets.filter(item=>{
+            if(item.isResolved===false)
+            {
+                return item
+            }
+        })
+        console.log('ticektstoresolve ' + ticketsToResolve)
+         await res.render('ResolveTickets',{tickets:ticketsToResolve})
+        }
+        else{
+            res.redirect('/panel');
+        }
+       
+        
+        }
 
 
 
@@ -79,8 +102,10 @@ module.exports.newTicket_post = async (req,res) => {
 }
 
 
-module.exports.panel_get = (req,res) => {
-    res.render('Panel')
+module.exports.panel_get = async (req,res) => {
+    const token =  req.cookies.jwt
+    const user = await User.findByToken(token)
+    await res.render('Panel',{admin:user.isAdmin})
 }
 
 module.exports.panel_post = async (req,res) => {

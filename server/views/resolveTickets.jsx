@@ -1,6 +1,6 @@
 var React = require('react')
-var Ticket = require('ticket')
-function resolveTickets(props){
+var Ticket = require('./Ticket')
+function ResolveTickets(props){
     const tickets= props.tickets
     const Items = tickets.map(ticket=>{
         return(
@@ -15,6 +15,7 @@ function resolveTickets(props){
             resolvedBy = {ticket.resolvedBy}
             resolvedDate = {ticket.resolvedDate}
             comment = {ticket.comment}
+            resolveBtn = {true}
         />
         )
     })
@@ -28,10 +29,10 @@ function resolveTickets(props){
             </head>
             <body>
                 <div className='__ViewTicketsWrapper'>
-                    
+                    {Items}
                 </div>
             </body>
         </html>
     )
 }
-module.exports = resolveTickets
+module.exports = ResolveTickets

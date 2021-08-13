@@ -32,6 +32,7 @@ function Panel(props){
                         <i className="fas fa-chevron-right"></i>
                     </a>
                 </div>
+                {props.admin?
                 <div className='__ViewTickets __OptionDiv'>
                     <h2 className='__OptionTitle'>resolve tickets</h2>
                     <i className="fas fa-search-plus __BigIcon"></i>
@@ -42,6 +43,9 @@ function Panel(props){
                         <i className="fas fa-chevron-right"></i>
                     </a>
                 </div>
+                :
+                null
+                }
             </div>
         </body>
       </html>

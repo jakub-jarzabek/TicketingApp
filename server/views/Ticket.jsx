@@ -16,7 +16,7 @@ function Ticket(props){
             <p className='__TicketResolved' style={{color:'blue'}}>Status: Open</p>
             :
             <p className='__TicketResolved' style={{color:'green'}}>Status: Resolved</p>}
-            {props.isResolved ? null : <button className='__ResolveBtn'>Resolve</button>}
+            {props.isResolved || !props.resolveBtn ? null : <button className='__ResolveBtn'>Resolve</button>}
         </div>
     )
 }
