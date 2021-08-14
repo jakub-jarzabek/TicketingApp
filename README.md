@@ -35,6 +35,6 @@ DB_CONNECTION = mongodb+srv://[username:password@]host1[:port1][,host2[:port2],.
 Insert document into the **users** collection inside your database:
 ![image](https://drive.google.com/uc?export=view&id=1IPQcon-9HhmN3ZmM0wKwlS-DJNwuYAwj)
 
-Now you can log in using those credentials at **http://localhost:3000
+Now you can log in using those credentials at **http://localhost:3000**
 
 
