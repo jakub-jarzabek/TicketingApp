@@ -51,6 +51,15 @@ ticketSchema.statics.findTickets = async function(email){
     console.log("error")
 }
 
+ticketSchema.statics.findNonResolved = async function(){
+    const tickets = await this.find({"isResolved": false})
+    if(tickets)
+    {
+        return tickets
+    }
+    console.log("error")
+}
+
 const Ticket = mongoose.model('ticket', ticketSchema)
 
 

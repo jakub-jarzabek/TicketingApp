@@ -34,9 +34,18 @@ module.exports.updateTickets_put = async (req, res) =>{
 
 }
 
+
+
 module.exports.ticketsByEmail_get = async  (req, res) =>{
     const token = await req.cookies.jwt ||req.headers["x-access-token"]
-    console.log('token:' + token)
+    const method = await req.headers["method"]
+    console.log(method)
+    if(method === "resolve")
+    {
+        const tickets = await Ticket.findNonResolved()
+        console.log("finding non resolved tickets")
+        res.send(tickets)
+    }else{
     try{
          const user = await User.findByToken(token)
          console.log('email:' + user.email)
@@ -47,7 +56,7 @@ module.exports.ticketsByEmail_get = async  (req, res) =>{
     catch(err)
     {
         console.log(err)
-    }
+    }}
 
 
 
@@ -73,19 +82,14 @@ module.exports.submittedTickets_get = async (req,res) => {
         if(user.isAdmin){
             const tickets = await fetch('http://localhost:3000/api/tickets', {
             method: 'get',
-            headers: { 'x-access-token': token },
+            headers: { 'x-access-token': token,
+                        'method':"resolve"},
         })
         .then(response => response.json())
         .then(data => Array.from(data));
-        const ticketsToResolve= tickets.filter(item=>{
-            if(item.isResolved===false)
-            {
-                return item
-            }
-        })
-        console.log('ticektstoresolve ' + ticketsToResolve)
-        console.log('eeeeemaol;' + user.email)
-         await res.render('ResolveTickets',{tickets:ticketsToResolve,user:user.email})
+
+
+         await res.render('ResolveTickets',{tickets, user:user.email})
         }
         else{
             res.redirect('/panel');

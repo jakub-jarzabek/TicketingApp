@@ -18,7 +18,7 @@ form.addEventListener('submit', async (e)=>{
          });
          const data = await res.json();
          if(data){
-           window.location.reload() 
+           //window.location.reload()
          }
          }catch(err){
          console.log(err)

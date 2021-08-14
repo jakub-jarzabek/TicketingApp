@@ -32,6 +32,7 @@ function Ticket(props){
             <button className='__ResolveBtn' type='submit'>Resolve</button>
             </form>
             }
+
         </div>
     )
 }
