@@ -17,3 +17,12 @@ Project is created with:
 * node-fetch version: 2.6.1
 * react version: 17.0.2
 * react-dom version: 17.0.2
+
+#Setup
+To run this project, install it locally using npm:
+
+```
+$ cd ./server
+$ npm install
+$ npm run app
+```
