@@ -13,6 +13,27 @@ const createToken = (id) => {
 
 //auth
 
+module.exports.updateTickets_put = async (req, res) =>{
+
+    const token =  req.cookies.jwt || req.headers["x-access-token"]
+    const user = await User.findByToken(token)
+    if(user.isAdmin){
+        const {resolveDate, resolvedBy, comment} = req.body
+        const ticket = await Ticket.findByIdAndUpdate({_id:req.params.id}, {
+            resolveDate,
+            resolvedBy,
+            comment,
+            "isResolved": true
+        }).then(function(){
+            Ticket.findOne({_id:req.params.id}).then(function(Ticket){
+                res.send(Ticket)
+            })
+        })
+
+    }
+
+}
+
 module.exports.ticketsByEmail_get = async  (req, res) =>{
     const token = await req.cookies.jwt ||req.headers["x-access-token"]
     console.log('token:' + token)

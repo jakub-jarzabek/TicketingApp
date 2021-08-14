@@ -14,6 +14,7 @@ const router = Router();
 
 
 const authController = require('../controllers/authController')
+router.put('/api/tickets/:id', requireAuth, authController.updateTickets_put)
 router.get('/api/tickets', requireAuth, authController.ticketsByEmail_get)
 router.get('/submitted', requireAuth, authController.submittedTickets_get)
 router.post('/submitted', authController.submittedTickets_post)
