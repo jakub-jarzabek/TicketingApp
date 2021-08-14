@@ -6,18 +6,18 @@ form.addEventListener('submit', async (e)=>{
         "resolvedBy":e.target[0].value,
         "resolvedDate":e.target[1].value,
         "comment":e.target[2].value,
-        "_id":e.target[3].value,
     }
+    const id = e.target[3].value
      try{
          console.log(putData)
          console.log(e.target)
-         const res = await fetch('/api/tickets',{
+         const res = await fetch(`/api/tickets/${id}`,{
             method:'PUT',
             body: JSON.stringify(postData),
             headers:{'Content-Type': 'application/json'}
          });
          const data = await res.json();
-         if(data){
+         if(data.comment){
            window.location.reload() 
          }
          }catch(err){

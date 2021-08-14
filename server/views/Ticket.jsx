@@ -21,7 +21,7 @@ function Ticket(props){
             ?
             null
             : 
-            <form className='__ResolveForm'>
+            <form className='__ResolveForm' id={`ResolveForm_${props.ticketId}`}>
                 <label htmlFor="ResolvedByInput">Resolved By:</label>
                 <input type="text" id='ResolvedByInput' className='__ResolvedByInput' value={props.user} readOnly/>
                 <label htmlFor="ResolvedDateInput">Resolved Date:</label>
