@@ -1,10 +1,9 @@
 # Tickatus - ticketing app
-Simple ticketing app created with Node.js and MongoDB
+Ticketing app created with Node.js and MongoDB
 
 # Technologies
-Project is created with:
+Project is created with the use of following libraries:
 * node.js version: 14.17.3
-* npm version: 6.14.13
 * axios version: 0.21.1
 * body-parser version: 1.19.0
 * cookie-parser version: 1.4.5
@@ -27,5 +26,15 @@ $ npm install
 $ npm run app
 ```
 
-# Inspiration
-Matylda Straszak
+Create **.env** file inside of the **server** directory, which will contain database connection information:
+```
+DB_CONNECTION = mongodb+srv://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
+
+```
+
+Insert document into the **users** collection inside your database:
+![image](https://drive.google.com/uc?export=view&id=1IPQcon-9HhmN3ZmM0wKwlS-DJNwuYAwj)
+
+Now you can log in using those credentials at **http://localhost:3000
+
+
