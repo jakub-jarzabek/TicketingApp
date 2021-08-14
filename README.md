@@ -18,7 +18,7 @@ Project is created with:
 * react version: 17.0.2
 * react-dom version: 17.0.2
 
-#Setup
+# Setup
 To run this project, install it locally using npm:
 
 ```
