@@ -5,7 +5,7 @@ function ResolveTickets(props){
     const Items = tickets.map(ticket=>{
         return(
         <Ticket 
-            key = {ticket.id}
+            key = {ticket._id}
             title = {ticket.title}
             issuedBy = {ticket.issuedBy}
             category = {ticket.category}
@@ -16,6 +16,8 @@ function ResolveTickets(props){
             resolvedDate = {ticket.resolvedDate}
             comment = {ticket.comment}
             resolveBtn = {true}
+            user = {props.user}
+            ticketID={ticket._id}
         />
         )
     })
@@ -32,6 +34,7 @@ function ResolveTickets(props){
                     {Items}
                 </div>
             </body>
+            <script src='/scripts/ResolveTicket.js'/>
         </html>
     )
 }

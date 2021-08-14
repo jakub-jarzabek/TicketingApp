@@ -37,3 +37,9 @@ text-align: center;
     background-color: black;
     border: 2px solid white;
 }
+
+.__ResolveForm{
+    display: flex;
+    flex-direction: column;
+    flex-grow: grow;
+}

@@ -16,7 +16,22 @@ function Ticket(props){
             <p className='__TicketResolved' style={{color:'blue'}}>Status: Open</p>
             :
             <p className='__TicketResolved' style={{color:'green'}}>Status: Resolved</p>}
-            {props.isResolved || !props.resolveBtn ? null : <button className='__ResolveBtn'>Resolve</button>}
+            {
+            props.isResolved || !props.resolveBtn 
+            ?
+            null
+            : 
+            <form className='__ResolveForm'>
+                <label htmlFor="ResolvedByInput">Resolved By:</label>
+                <input type="text" id='ResolvedByInput' className='__ResolvedByInput' value={props.user} readOnly/>
+                <label htmlFor="ResolvedDateInput">Resolved Date:</label>
+                <input type="text" id='ResolvedDateInput' className='__ResolvedDateInput' value={new Date().toLocaleString()} readOnly/>
+                <label htmlFor="ResolvedComment">Comment:</label>
+                <textarea id="ResolvedComment" cols="30" rows="10"></textarea>
+                <input type="hidden" id="TicketID"  value={props.ticketID}></input>
+            <button className='__ResolveBtn' type='submit'>Resolve</button>
+            </form>
+            }
         </div>
     )
 }

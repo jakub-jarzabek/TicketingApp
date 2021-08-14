@@ -84,7 +84,8 @@ module.exports.submittedTickets_get = async (req,res) => {
             }
         })
         console.log('ticektstoresolve ' + ticketsToResolve)
-         await res.render('ResolveTickets',{tickets:ticketsToResolve})
+        console.log('eeeeemaol;' + user.email)
+         await res.render('ResolveTickets',{tickets:ticketsToResolve,user:user.email})
         }
         else{
             res.redirect('/panel');
@@ -103,9 +104,11 @@ module.exports.submittedTickets_post =  (req,res) => {
 
 
 
-module.exports.newTicket_get =  (req,res) => {
-
-    res.render('DefaultLayout')
+module.exports.newTicket_get =  async(req,res) => {
+    const token =  req.cookies.jwt
+    const user = await User.findByToken(token)
+    console.log('useremailnewticket:' + user.email)
+     await res.render('NewTicket',{user:user.email})
 
 }
 
