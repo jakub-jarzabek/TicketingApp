@@ -26,3 +26,6 @@ $ cd ./server
 $ npm install
 $ npm run app
 ```
+
+# Inspiration
+Matylda Straszak
