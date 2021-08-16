@@ -38,8 +38,14 @@ Insert document into the **users** collection inside your database:
 Now you can log in using those credentials at **http://localhost:3000**
 
 
+#Live Example:
+Heroku live example can be found under this URL:
+
+```
+https://tickatus-app.herokuapp.com
+```
 # Login
-Login credentials for github pages example:
+Login credentials for heroku example:
 Administrator account:
 
 ```
