@@ -25,5 +25,6 @@ router.get('/panel', requireAuth, authController.panel_get)
 router.post('/panel', authController.panel_post)
 router.get('/', authController.login_get)
 router.post('/', authController.login_post)
+router.get('/logout', authController.logout_get)
 
 module.exports = router;

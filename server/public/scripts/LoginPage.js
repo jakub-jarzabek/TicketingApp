@@ -1,7 +1,3 @@
-function createCookie(key, value) {
-    const cookie = escape(key) + "=" + escape(value) + ";";
-    document.cookie = cookie;
-}
 
 const form = document.querySelector('form');
 
@@ -18,7 +14,6 @@ form.addEventListener('submit', async (e)=>{
          const data = await res.json();
          console.log(data)
          if(data.user){
-             createCookie("currentUser",data.email);
              window.location.replace('http://localhost:3000/panel');
          }
          }catch(err){

@@ -6,6 +6,9 @@ function LoginPage(props) {
       <head>
         <title>Login Page</title>
         <link rel="stylesheet" type="text/css" href="/styles/login.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
       </head>
       <body>
         <form  className='__LoginForm'>

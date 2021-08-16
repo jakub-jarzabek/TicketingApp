@@ -9,8 +9,12 @@ function Panel(props){
           <script src="https://kit.fontawesome.com/af38254b2c.js" crossOrigin="anonymous"></script>
           <link rel="stylesheet" type="text/css" href="/styles/panel.css" />
           <link rel="stylesheet" type="text/css" href="/styles/newTask.css" />
+          <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
         </head>
         <body>
+            <a className='__Logout' href='/logout' id='Logout'>Logout</a>
             <div className='__OptionsWrapper'>
                 <div className='__ViewTickets __OptionDiv'>
                     <h2 className='__OptionTitle'>Submitted Tickets</h2>
@@ -48,6 +52,7 @@ function Panel(props){
                 }
             </div>
         </body>
+        <script src='/scripts/Logout.js'/>
       </html>
     )
 }

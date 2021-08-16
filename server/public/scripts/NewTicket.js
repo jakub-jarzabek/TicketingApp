@@ -11,6 +11,7 @@ form.addEventListener('submit', async (e)=>{
         "date":e.target[4].value,
         "isResolved": false
     }
+    console.log(postData)
      try{
          const res = await fetch('/api/tickets',{
             method:'POST',

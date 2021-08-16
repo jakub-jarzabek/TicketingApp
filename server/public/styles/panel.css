@@ -1,14 +1,11 @@
 body{
-    background-image: url('/assets/images/xd.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color:#262626;
     position:relative;
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    position: relative;
 }
 .__OptionsWrapper{
     position: absolute;
@@ -21,17 +18,17 @@ body{
 }
 .__OptionDiv{
     padding:10px;
-    background-color: lightgray;
-    border: 2px solid black;
     width:20%;
     text-align: center;
-    border-radius: 20px;
+    color:white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .__BigIcon{
     font-size: 100px;
     display: block;
-    margin-bottom:20px;
+    margin-bottom:40px;
+    color:#72a7ff;
 }
 
 .__OptionTitle{
@@ -40,7 +37,7 @@ text-transform: uppercase;
 
 a{
     text-decoration: none;
-    color:black;
+    color:white;
 }
 
 a span{
@@ -52,4 +49,16 @@ a span{
 a i{
     margin-left: 5px;
     font-size: 20px;
+}
+.__Logout{
+    text-decoration: none;
+    position: absolute;
+    right: 0%;
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding:20px;
+    font-size:20px;
+    cursor: pointer;
 }

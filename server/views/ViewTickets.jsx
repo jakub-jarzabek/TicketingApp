@@ -34,6 +34,7 @@ function ViewTasks(props) {
                 <i className="arrow left"></i>
                 Back
             </a>
+            <a className='__Logout' href='/logout' id='Logout'>Logout</a>
                 <div className='__ViewTicketsWrapper'>
                     {Items}
                 </div>

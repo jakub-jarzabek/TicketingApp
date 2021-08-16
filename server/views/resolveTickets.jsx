@@ -30,6 +30,11 @@ function ResolveTickets(props){
                 <link rel="stylesheet" type="text/css" href="/styles/ticket.css" />
             </head>
             <body>
+            <a href="/panel" className='__BackBtn'>
+                <i className="arrow left"></i>
+                Back
+            </a>
+            <a className='__Logout' href='/logout' id='Logout'>Logout</a>
                 <div className='__ViewTicketsWrapper'>
                     {Items}
                 </div>

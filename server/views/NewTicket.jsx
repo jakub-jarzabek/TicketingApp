@@ -6,12 +6,16 @@ function NewTicket(props){
       <title>New Task</title>
       <link rel="stylesheet" type="text/css" href="/styles/login.css" />
       <link rel="stylesheet" type="text/css" href="/styles/newTask.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     </head>
     <body>
     <a href="/panel" className='__BackBtn'>
     <i className="arrow left"></i>
             Back
             </a>
+            <a className='__Logout' href='/logout' id='Logout'>Logout</a>
        <div className='__FormWrapper'>
            <h1 className='__NewTaskHeader'>New Task</h1>
            <form action="" className='__NewTaskForm'>

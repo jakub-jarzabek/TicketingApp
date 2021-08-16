@@ -1,11 +1,9 @@
 .__FormWrapper{
     width:800px;
-    background-color: grey;
     position: absolute;
     top:50%;
     left:50%;
     transform: translateX(-50%) translateY(-50%);
-    border: solid black 2px;
     border-radius: 25px;
 }
 .__NewTaskForm{
@@ -19,20 +17,20 @@
     margin-top: 0;
     overflow:hidden;
     padding: 30px;
-    background-color: aquamarine;
     text-transform: uppercase;
     font-size:30px;
     font-family: sans-serif;
     text-align: center;
-    border-radius: 25px;
+    color: #72a7ff;
 
 }
 
 .__FormLabel{
     margin-left: 10px;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 15px;
     font-family: sans-serif;
+    color:#72a7ff;
 }
 
 #Description{
@@ -42,16 +40,14 @@ margin: 0 10px;
 
 .__BackBtn{
     text-decoration: none;
-    color:black;
+    color:white;
     text-transform: uppercase;
     letter-spacing: 2px;
-    position:absolute;
-    top:5%;
-    left:5%;
+    padding:20px;
     font-size:20px
     }
 .arrow {
-    border: solid black;
+    border: solid white;
     border-width: 0 5px 5px 0;
     display: inline-block;
     padding: 5px;
@@ -69,4 +65,16 @@ transform: rotate(135deg);
     0% {left:5%}
     50%{left:2%}
     100%{left:5%}
+}
+.__Logout{
+    text-decoration: none;
+    position: absolute;
+    right: 0%;
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding:20px;
+    font-size:20px;
+    cursor: pointer;
 }
