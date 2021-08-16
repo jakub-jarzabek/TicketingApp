@@ -38,3 +38,17 @@ Insert document into the **users** collection inside your database:
 Now you can log in using those credentials at **http://localhost:3000**
 
 
+# Login
+Login credentials for github pages example:
+Administrator account:
+
+```
+Email: admin@jms.jms
+Password: admin
+```
+User account:
+
+```
+Email: user@jms.jms
+Password: user
+```

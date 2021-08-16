@@ -2,16 +2,6 @@ const { Router } = require('express');
 const {requireAuth} = require('../middleware/authMiddleware')
 const router = Router();
 
-// exports.loginPage = function (req,res){
-//     res.render('LoginPage')
-// }
-
-
-
-//auth
-
-
-
 
 const authController = require('../controllers/authController')
 router.put('/api/tickets/:id', requireAuth, authController.updateTickets_put)

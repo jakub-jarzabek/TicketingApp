@@ -5,7 +5,7 @@ const requireAuth = (req, res, next) => {
     const token = req.headers["x-access-token"] || req.cookies.jwt
 
     if(token){
-        jwt.verify(token, 'jms', (err, decodedToken) => {
+        jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
             if(err){
                 console.log(err.message)
                 res.redirect('/')

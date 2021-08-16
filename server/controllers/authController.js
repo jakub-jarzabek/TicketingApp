@@ -39,19 +39,15 @@ module.exports.updateTickets_put = async (req, res) =>{
 module.exports.ticketsByEmail_get = async  (req, res) =>{
     const token = await req.cookies.jwt ||req.headers["x-access-token"]
     const method = await req.headers["method"]
-    console.log(method)
     if(method === "resolve")
     {
         const tickets = await Ticket.findNonResolved()
-        console.log("finding non resolved tickets")
         res.send(tickets)
     }else{
     try{
-         const user = await User.findByToken(token)
-         console.log('email:' + user.email)
-       const tickets = await Ticket.findTickets(user.email)
-       console.log('tickets:' + tickets)
-            res.send(tickets)
+        const user = await User.findByToken(token)
+        const tickets = await Ticket.findTickets(user.email)
+        res.send(tickets)
     }
     catch(err)
     {
@@ -111,7 +107,6 @@ module.exports.submittedTickets_post =  (req,res) => {
 module.exports.newTicket_get =  async(req,res) => {
     const token =  req.cookies.jwt
     const user = await User.findByToken(token)
-    console.log('useremailnewticket:' + user.email)
      await res.render('NewTicket',{user:user.email})
 
 }
