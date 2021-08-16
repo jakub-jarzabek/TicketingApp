@@ -38,7 +38,7 @@ Insert document into the **users** collection inside your database:
 Now you can log in using those credentials at **http://localhost:3000**
 
 
-#Live Example:
+# Live Example:
 Heroku live example can be found under this URL:
 
 ```
@@ -58,3 +58,8 @@ User account:
 Email: user@jms.jms
 Password: user
 ```
+
+# Creators
+
+Jakub Jarząbek https://github.com/jakub-jarzabek
+Kacper Reja https://github.com/nischuGit
