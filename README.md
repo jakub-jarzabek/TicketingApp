@@ -2,7 +2,7 @@
 Ticketing app created with Node.js and MongoDB
 
 # Technologies
-Project is created with the use of following libraries:
+Project is created with the use of the following libraries:
 * node.js version: 14.17.3
 * axios version: 0.21.1
 * body-parser version: 1.19.0
